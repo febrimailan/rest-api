@@ -5,6 +5,12 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
+const mango = require('mongodb');
+const mongoose = require('mongoose');
+
+mongoose.connect('mongodb://localhost/restapidb');
+const db = mongoose.connection;
+
 var index = require('./routes/index');
 var users = require('./routes/users');
 
